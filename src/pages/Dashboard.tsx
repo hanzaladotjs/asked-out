@@ -8,7 +8,7 @@ import Layout from '@/components/Layout';
 import QuestionCard from '@/components/QuestionCard';
 import ProfileShareCard from '@/components/ProfileShareCard';
 import { useToast } from '@/components/ui/use-toast';
-import { Discord } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 
 const Dashboard = () => {
   const { isAuthenticated, username } = useAuth();
@@ -74,7 +74,7 @@ const Dashboard = () => {
       <div className="space-y-8">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-askedout-olive mb-2 flex justify-center items-center gap-2">
-            <Discord size={32} className="text-askedout-olive" />
+            <MessageSquare size={32} className="text-askedout-olive" />
             Hey Anon!
           </h1>
           <p className="text-gray-600">Manage your questions and profile</p>
