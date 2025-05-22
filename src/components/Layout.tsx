@@ -3,7 +3,7 @@ import React from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { MessageCircle, Home, LogOut, User } from 'lucide-react';
+import { MessageSquare, Home, LogOut, User } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <div className="bg-askedout-olive rounded-full p-2">
-              <MessageCircle size={24} className="text-white" />
+              <MessageSquare size={24} className="text-white" />
             </div>
             <span className="text-xl font-bold text-askedout-olive">AskedOut</span>
           </Link>
@@ -28,7 +28,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <>
                 <Link to="/dashboard" className="text-gray-600 hover:text-askedout-olive flex items-center">
                   <Home size={20} className="mr-1" />
-                  <span className="hidden sm:inline">Dashboard</span>
+                  <span className="hidden sm:inline">Hey Anon!</span>
                 </Link>
                 <Link to={`/profile/${username}`} className="text-gray-600 hover:text-askedout-olive flex items-center">
                   <User size={20} className="mr-1" />

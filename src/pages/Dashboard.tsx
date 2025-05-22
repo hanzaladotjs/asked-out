@@ -80,7 +80,7 @@ const Dashboard = () => {
           <p className="text-gray-600">Manage your questions and profile</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-6">
           <Card className="border-2 border-askedout-light-olive">
             <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
             
@@ -121,36 +121,10 @@ const Dashboard = () => {
             </CardContent>
           </Card>
           
-          <div className="space-y-6">
-            <ProfileShareCard 
-              username={username || ''} 
-              profileUrl={profileUrl}
-            />
-            
-            <Card className="border-2 border-askedout-light-olive">
-              <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
-              
-              <CardHeader>
-                <CardTitle>Your Stats</CardTitle>
-              </CardHeader>
-              
-              <CardContent>
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div className="p-4 rounded-lg bg-askedout-soft-olive">
-                    <p className="text-2xl font-bold text-askedout-olive">{questions.length}</p>
-                    <p className="text-sm text-gray-600">Total Questions</p>
-                  </div>
-                  
-                  <div className="p-4 rounded-lg bg-askedout-soft-olive">
-                    <p className="text-2xl font-bold text-askedout-olive">
-                      {questions.filter(q => q.answer).length}
-                    </p>
-                    <p className="text-sm text-gray-600">Answers</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <ProfileShareCard 
+            username={username || ''} 
+            profileUrl={profileUrl}
+          />
         </div>
       </div>
     </Layout>
