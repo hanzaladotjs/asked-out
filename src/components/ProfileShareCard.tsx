@@ -25,8 +25,8 @@ const ProfileShareCard: React.FC<ProfileShareCardProps> = ({ username, profileUr
   };
 
   return (
-    <Card className="border-2 border-duolingo-light-purple text-center">
-      <div className="h-2 bg-gradient-to-r from-duolingo-purple to-duolingo-light-purple" />
+    <Card className="border-2 border-askedout-light-olive text-center">
+      <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
       
       <CardHeader>
         <CardTitle className="text-xl">Share Your Profile</CardTitle>
@@ -56,7 +56,7 @@ const ProfileShareCard: React.FC<ProfileShareCardProps> = ({ username, profileUr
         <div className="flex justify-center space-x-4 pt-2">
           <FacebookShareButton 
             url={profileUrl} 
-            quote={`Ask me anything anonymously on AskMe!`}
+            quote={`Ask me anything anonymously on AskedOut!`}
           >
             <Button variant="outline" size="icon" className="rounded-full h-10 w-10 text-blue-600 hover:text-blue-700">
               <Facebook className="h-5 w-5" />
@@ -65,7 +65,7 @@ const ProfileShareCard: React.FC<ProfileShareCardProps> = ({ username, profileUr
           
           <TwitterShareButton 
             url={profileUrl} 
-            title={`Ask me anything anonymously on AskMe!`}
+            title={`Ask me anything anonymously on AskedOut!`}
           >
             <Button variant="outline" size="icon" className="rounded-full h-10 w-10 text-sky-500 hover:text-sky-600">
               <Twitter className="h-5 w-5" />
@@ -74,7 +74,7 @@ const ProfileShareCard: React.FC<ProfileShareCardProps> = ({ username, profileUr
           
           <WhatsappShareButton 
             url={profileUrl} 
-            title={`Ask me anything anonymously on AskMe!`}
+            title={`Ask me anything anonymously on AskedOut!`}
           >
             <Button variant="outline" size="icon" className="rounded-full h-10 w-10 text-green-500 hover:text-green-600">
               <MessageCircle className="h-5 w-5" />

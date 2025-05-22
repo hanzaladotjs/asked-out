@@ -36,8 +36,8 @@ const Register = () => {
   return (
     <Layout>
       <div className="flex justify-center items-center min-h-[70vh] px-4">
-        <Card className="w-full max-w-md border-2 border-duolingo-light-purple">
-          <div className="h-2 bg-gradient-to-r from-duolingo-purple to-duolingo-light-purple" />
+        <Card className="w-full max-w-md border-2 border-askedout-light-olive">
+          <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
           
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl text-center">Create an Account</CardTitle>
@@ -87,7 +87,7 @@ const Register = () => {
               
               <Button 
                 type="submit" 
-                className="w-full bg-duolingo-purple hover:bg-duolingo-purple/90"
+                className="w-full bg-askedout-olive hover:bg-askedout-olive/90"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Creating account...' : 'Create Account'}
@@ -98,7 +98,7 @@ const Register = () => {
           <CardFooter className="flex justify-center border-t pt-4">
             <p className="text-sm text-muted-foreground">
               Already have an account?{" "}
-              <Link to="/login" className="text-duolingo-purple hover:underline">
+              <Link to="/login" className="text-askedout-olive hover:underline">
                 Login
               </Link>
             </p>

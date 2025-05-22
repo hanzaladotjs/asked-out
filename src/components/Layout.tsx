@@ -17,27 +17,27 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <header className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-duolingo-purple rounded-full p-2">
+            <div className="bg-askedout-olive rounded-full p-2">
               <MessageCircle size={24} className="text-white" />
             </div>
-            <span className="text-xl font-bold text-duolingo-purple">AskMe</span>
+            <span className="text-xl font-bold text-askedout-olive">AskedOut</span>
           </Link>
           
           <nav className="flex items-center space-x-4">
             {isAuthenticated ? (
               <>
-                <Link to="/dashboard" className="text-gray-600 hover:text-duolingo-purple flex items-center">
+                <Link to="/dashboard" className="text-gray-600 hover:text-askedout-olive flex items-center">
                   <Home size={20} className="mr-1" />
                   <span className="hidden sm:inline">Dashboard</span>
                 </Link>
-                <Link to={`/profile/${username}`} className="text-gray-600 hover:text-duolingo-purple flex items-center">
+                <Link to={`/profile/${username}`} className="text-gray-600 hover:text-askedout-olive flex items-center">
                   <User size={20} className="mr-1" />
                   <span className="hidden sm:inline">{username}</span>
                 </Link>
                 <Button 
                   variant="ghost" 
                   onClick={logout}
-                  className="text-gray-600 hover:text-duolingo-purple"
+                  className="text-gray-600 hover:text-askedout-olive"
                 >
                   <LogOut size={20} className="mr-1" />
                   <span className="hidden sm:inline">Logout</span>
@@ -49,7 +49,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   <Button variant="ghost">Login</Button>
                 </Link>
                 <Link to="/register">
-                  <Button variant="default" className="bg-duolingo-purple hover:bg-duolingo-purple/90">Register</Button>
+                  <Button variant="default" className="bg-askedout-olive hover:bg-askedout-olive/90">Register</Button>
                 </Link>
               </>
             )}
@@ -63,7 +63,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       
       <footer className="bg-gray-50 border-t border-gray-200 py-4">
         <div className="container mx-auto px-4 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} AskMe. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} AskedOut. All rights reserved.</p>
         </div>
       </footer>
     </div>

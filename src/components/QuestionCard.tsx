@@ -73,8 +73,8 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   };
 
   return (
-    <Card className={`overflow-hidden border-2 border-duolingo-light-purple ${className}`}>
-      <div className="h-2 bg-gradient-to-r from-duolingo-purple to-duolingo-light-purple" />
+    <Card className={`overflow-hidden border-2 border-askedout-light-olive ${className}`}>
+      <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
       
       <CardHeader className="pb-2">
         <p className="text-sm text-muted-foreground">
@@ -83,13 +83,13 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
       </CardHeader>
       
       <CardContent className="space-y-4">
-        <div className="p-4 rounded-lg bg-duolingo-soft-purple">
+        <div className="p-4 rounded-lg bg-askedout-soft-olive">
           <p className="font-medium">{question.content}</p>
         </div>
         
         {question.answer && (
           <div>
-            <p className="text-sm font-semibold text-duolingo-purple mb-2">Answer:</p>
+            <p className="text-sm font-semibold text-askedout-olive mb-2">Answer:</p>
             <div className="p-4 rounded-lg bg-gray-50">
               <p>{question.answer}</p>
               {question.answeredAt && (
@@ -104,7 +104,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         {!question.answer && onAnswer && !isAnswering && (
           <Button 
             onClick={() => setIsAnswering(true)}
-            className="bg-duolingo-purple hover:bg-duolingo-purple/90"
+            className="bg-askedout-olive hover:bg-askedout-olive/90"
           >
             Answer this question
           </Button>
@@ -123,7 +123,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
               <Button 
                 onClick={handleSubmitAnswer}
                 disabled={isSubmitting}
-                className="bg-duolingo-purple hover:bg-duolingo-purple/90"
+                className="bg-askedout-olive hover:bg-askedout-olive/90"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Answer'}
               </Button>

@@ -49,8 +49,8 @@ const QuestionForm: React.FC<QuestionFormProps> = ({ username, onSubmit }) => {
   };
 
   return (
-    <Card className="border-2 border-duolingo-light-purple">
-      <div className="h-2 bg-gradient-to-r from-duolingo-purple to-duolingo-light-purple" />
+    <Card className="border-2 border-askedout-light-olive">
+      <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
       
       <CardHeader>
         <CardTitle className="text-xl text-center">Ask @{username} Anonymously</CardTitle>
@@ -67,7 +67,7 @@ const QuestionForm: React.FC<QuestionFormProps> = ({ username, onSubmit }) => {
           
           <Button 
             type="submit" 
-            className="w-full bg-duolingo-purple hover:bg-duolingo-purple/90"
+            className="w-full bg-askedout-olive hover:bg-askedout-olive/90"
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Sending...' : 'Send Anonymous Question'}

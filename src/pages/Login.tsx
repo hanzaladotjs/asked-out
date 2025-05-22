@@ -27,8 +27,8 @@ const Login = () => {
   return (
     <Layout>
       <div className="flex justify-center items-center min-h-[70vh] px-4">
-        <Card className="w-full max-w-md border-2 border-duolingo-light-purple">
-          <div className="h-2 bg-gradient-to-r from-duolingo-purple to-duolingo-light-purple" />
+        <Card className="w-full max-w-md border-2 border-askedout-light-olive">
+          <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
           
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl text-center">Login to Your Account</CardTitle>
@@ -61,7 +61,7 @@ const Login = () => {
               
               <Button 
                 type="submit" 
-                className="w-full bg-duolingo-purple hover:bg-duolingo-purple/90"
+                className="w-full bg-askedout-olive hover:bg-askedout-olive/90"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Logging in...' : 'Login'}
@@ -72,7 +72,7 @@ const Login = () => {
           <CardFooter className="flex justify-center border-t pt-4">
             <p className="text-sm text-muted-foreground">
               Don't have an account?{" "}
-              <Link to="/register" className="text-duolingo-purple hover:underline">
+              <Link to="/register" className="text-askedout-olive hover:underline">
                 Register
               </Link>
             </p>

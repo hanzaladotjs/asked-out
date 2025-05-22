@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -69,6 +68,13 @@ export default {
 					'soft-purple': '#E5DEFF',
 					green: '#4ADE80',
 					yellow: '#FBBF24',
+				},
+				askedout: {
+					olive: '#556B2F',
+					'light-olive': '#9CA67A',
+					'soft-olive': '#F2F5E9',
+					'dark-olive': '#3B4A1F',
+					accent: '#7D8F4B',
 				},
 			},
 			borderRadius: {
