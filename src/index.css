@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -72,7 +72,7 @@
 @layer base {
   * {
     @apply border-border;
-    font-family: 'Jaro', sans-serif;
+    font-family: 'Golos Text', sans-serif;
   }
 
   body {

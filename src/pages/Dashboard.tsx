@@ -73,19 +73,19 @@ const Dashboard = () => {
     <Layout>
       <div className="space-y-8">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-duolingo-purple mb-2">Welcome, {username}!</h1>
+          <h1 className="text-3xl font-bold text-askedout-olive mb-2">Welcome, {username}!</h1>
           <p className="text-gray-600">Manage your questions and profile</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-2 space-y-6">
-            <Card className="border-2 border-duolingo-light-purple">
-              <div className="h-2 bg-gradient-to-r from-duolingo-purple to-duolingo-light-purple" />
+            <Card className="border-2 border-askedout-light-olive">
+              <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
               
               <CardHeader>
                 <CardTitle>
                   Unanswered Questions{' '}
-                  <span className="inline-flex items-center justify-center bg-duolingo-purple text-white rounded-full h-6 w-6 text-sm">
+                  <span className="inline-flex items-center justify-center bg-askedout-olive text-white rounded-full h-6 w-6 text-sm">
                     {unansweredQuestions.length}
                   </span>
                 </CardTitle>
@@ -120,13 +120,13 @@ const Dashboard = () => {
             </Card>
             
             {answeredQuestions.length > 0 && (
-              <Card className="border-2 border-duolingo-light-purple">
-                <div className="h-2 bg-gradient-to-r from-duolingo-purple to-duolingo-light-purple" />
+              <Card className="border-2 border-askedout-light-olive">
+                <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
                 
                 <CardHeader>
                   <CardTitle>
                     Answered Questions{' '}
-                    <span className="inline-flex items-center justify-center bg-duolingo-green text-white rounded-full h-6 w-6 text-sm">
+                    <span className="inline-flex items-center justify-center bg-askedout-accent text-white rounded-full h-6 w-6 text-sm">
                       {answeredQuestions.length}
                     </span>
                   </CardTitle>
@@ -154,8 +154,8 @@ const Dashboard = () => {
               profileUrl={profileUrl}
             />
             
-            <Card className="border-2 border-duolingo-light-purple">
-              <div className="h-2 bg-gradient-to-r from-duolingo-purple to-duolingo-light-purple" />
+            <Card className="border-2 border-askedout-light-olive">
+              <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
               
               <CardHeader>
                 <CardTitle>Your Stats</CardTitle>
@@ -163,13 +163,13 @@ const Dashboard = () => {
               
               <CardContent>
                 <div className="grid grid-cols-2 gap-4 text-center">
-                  <div className="p-4 rounded-lg bg-duolingo-soft-purple">
-                    <p className="text-2xl font-bold text-duolingo-purple">{questions.length}</p>
+                  <div className="p-4 rounded-lg bg-askedout-soft-olive">
+                    <p className="text-2xl font-bold text-askedout-olive">{questions.length}</p>
                     <p className="text-sm text-gray-600">Total Questions</p>
                   </div>
                   
-                  <div className="p-4 rounded-lg bg-duolingo-soft-purple">
-                    <p className="text-2xl font-bold text-duolingo-purple">
+                  <div className="p-4 rounded-lg bg-askedout-soft-olive">
+                    <p className="text-2xl font-bold text-askedout-olive">
                       {answeredQuestions.length}
                     </p>
                     <p className="text-sm text-gray-600">Answers</p>
