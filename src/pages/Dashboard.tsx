@@ -8,6 +8,7 @@ import Layout from '@/components/Layout';
 import QuestionCard from '@/components/QuestionCard';
 import ProfileShareCard from '@/components/ProfileShareCard';
 import { useToast } from '@/components/ui/use-toast';
+import { Discord } from 'lucide-react';
 
 const Dashboard = () => {
   const { isAuthenticated, username } = useAuth();
@@ -66,87 +67,59 @@ const Dashboard = () => {
   
   const profileUrl = window.location.origin + `/profile/${username}`;
   
-  const answeredQuestions = questions.filter(q => q.answer);
   const unansweredQuestions = questions.filter(q => !q.answer);
 
   return (
     <Layout>
       <div className="space-y-8">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-askedout-olive mb-2">Welcome, {username}!</h1>
+          <h1 className="text-3xl font-bold text-askedout-olive mb-2 flex justify-center items-center gap-2">
+            <Discord size={32} className="text-askedout-olive" />
+            Hey Anon!
+          </h1>
           <p className="text-gray-600">Manage your questions and profile</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="md:col-span-2 space-y-6">
-            <Card className="border-2 border-askedout-light-olive">
-              <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
-              
-              <CardHeader>
-                <CardTitle>
-                  Unanswered Questions{' '}
-                  <span className="inline-flex items-center justify-center bg-askedout-olive text-white rounded-full h-6 w-6 text-sm">
-                    {unansweredQuestions.length}
-                  </span>
-                </CardTitle>
-              </CardHeader>
-              
-              <CardContent>
-                {loading ? (
-                  <p className="text-center py-4">Loading questions...</p>
-                ) : (
-                  <>
-                    {unansweredQuestions.length === 0 ? (
-                      <div className="text-center py-8 bg-gray-50 rounded-lg">
-                        <p className="text-gray-500">No unanswered questions yet.</p>
-                        <p className="text-gray-500 mt-1">Share your profile to get questions!</p>
-                      </div>
-                    ) : (
-                      <div className="space-y-4">
-                        {unansweredQuestions.map(question => (
-                          <QuestionCard
-                            key={question.id}
-                            question={question}
-                            onAnswer={(answer) => handleAnswerQuestion(question.id, answer)}
-                            showShareOptions={true}
-                            shareUrl={`${profileUrl}/question/${question.id}`}
-                          />
-                        ))}
-                      </div>
-                    )}
-                  </>
-                )}
-              </CardContent>
-            </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card className="border-2 border-askedout-light-olive">
+            <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
             
-            {answeredQuestions.length > 0 && (
-              <Card className="border-2 border-askedout-light-olive">
-                <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
-                
-                <CardHeader>
-                  <CardTitle>
-                    Answered Questions{' '}
-                    <span className="inline-flex items-center justify-center bg-askedout-accent text-white rounded-full h-6 w-6 text-sm">
-                      {answeredQuestions.length}
-                    </span>
-                  </CardTitle>
-                </CardHeader>
-                
-                <CardContent>
-                  <div className="space-y-4">
-                    {answeredQuestions.map(question => (
-                      <QuestionCard
-                        key={question.id}
-                        question={question}
-                        showShareOptions={true}
-                        shareUrl={`${profileUrl}/question/${question.id}`}
-                      />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-          </div>
+            <CardHeader>
+              <CardTitle>
+                Unanswered Questions{' '}
+                <span className="inline-flex items-center justify-center bg-askedout-olive text-white rounded-full h-6 w-6 text-sm">
+                  {unansweredQuestions.length}
+                </span>
+              </CardTitle>
+            </CardHeader>
+            
+            <CardContent>
+              {loading ? (
+                <p className="text-center py-4">Loading questions...</p>
+              ) : (
+                <>
+                  {unansweredQuestions.length === 0 ? (
+                    <div className="text-center py-8 bg-gray-50 rounded-lg">
+                      <p className="text-gray-500">No unanswered questions yet.</p>
+                      <p className="text-gray-500 mt-1">Share your profile to get questions!</p>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {unansweredQuestions.map(question => (
+                        <QuestionCard
+                          key={question.id}
+                          question={question}
+                          onAnswer={(answer) => handleAnswerQuestion(question.id, answer)}
+                          showShareOptions={true}
+                          shareUrl={`${profileUrl}/question/${question.id}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+            </CardContent>
+          </Card>
           
           <div className="space-y-6">
             <ProfileShareCard 
@@ -170,7 +143,7 @@ const Dashboard = () => {
                   
                   <div className="p-4 rounded-lg bg-askedout-soft-olive">
                     <p className="text-2xl font-bold text-askedout-olive">
-                      {answeredQuestions.length}
+                      {questions.filter(q => q.answer).length}
                     </p>
                     <p className="text-sm text-gray-600">Answers</p>
                   </div>
