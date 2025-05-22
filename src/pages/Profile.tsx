@@ -82,7 +82,7 @@ const Profile = () => {
     return (
       <Layout>
         <div className="flex flex-col justify-center items-center min-h-[60vh]">
-          <h1 className="text-3xl font-bold mb-4 text-duolingo-purple">User not found</h1>
+          <h1 className="text-3xl font-bold mb-4 text-askedout-olive">User not found</h1>
           <p className="text-gray-600">The username '{username}' doesn't exist.</p>
         </div>
       </Layout>
@@ -93,13 +93,13 @@ const Profile = () => {
     <Layout>
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
-          <div className="bg-duolingo-purple rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
+          <div className="bg-askedout-olive rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
             <span className="text-white text-3xl font-bold">
               {user.username.charAt(0).toUpperCase()}
             </span>
           </div>
           
-          <h1 className="text-3xl font-bold text-duolingo-purple">@{user.username}</h1>
+          <h1 className="text-3xl font-bold text-askedout-olive">@{user.username}</h1>
         </div>
         
         <div className="space-y-8">
@@ -109,8 +109,8 @@ const Profile = () => {
           />
           
           <Tabs defaultValue="answered" className="w-full">
-            <TabsList className="grid w-full grid-cols-1">
-              <TabsTrigger value="answered" className="text-center">
+            <TabsList className="grid w-full grid-cols-1 bg-askedout-soft-olive">
+              <TabsTrigger value="answered" className="text-center data-[state=active]:bg-askedout-light-olive data-[state=active]:text-white">
                 Answered Questions ({questions.length})
               </TabsTrigger>
             </TabsList>
