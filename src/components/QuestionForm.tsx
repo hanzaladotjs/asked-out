@@ -8,9 +8,10 @@ import { useToast } from '@/components/ui/use-toast';
 interface QuestionFormProps {
   username: string;
   onSubmit: (question: string) => Promise<void>;
+  id?: string;
 }
 
-const QuestionForm: React.FC<QuestionFormProps> = ({ username, onSubmit }) => {
+const QuestionForm: React.FC<QuestionFormProps> = ({ username, onSubmit, id }) => {
   const [question, setQuestion] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -49,7 +50,7 @@ const QuestionForm: React.FC<QuestionFormProps> = ({ username, onSubmit }) => {
   };
 
   return (
-    <Card className="border-2 border-askedout-light-olive">
+    <Card id={id} className="border-2 border-askedout-light-olive">
       <div className="h-2 bg-gradient-to-r from-askedout-olive to-askedout-light-olive" />
       
       <CardHeader>

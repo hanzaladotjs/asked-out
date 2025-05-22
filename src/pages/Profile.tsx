@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { api, Question, User } from '@/lib/api';
 import { Card, CardContent } from '@/components/ui/card';
 import Layout from '@/components/Layout';
@@ -15,6 +15,8 @@ const Profile = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
+  const location = useLocation();
+  const isAskMode = location.search.includes('ask=true');
   
   useEffect(() => {
     fetchUserProfile();
@@ -89,6 +91,18 @@ const Profile = () => {
     );
   }
 
+  // If ask mode is active, scroll to the question form
+  useEffect(() => {
+    if (isAskMode) {
+      const questionFormElement = document.getElementById('question-form');
+      if (questionFormElement) {
+        setTimeout(() => {
+          questionFormElement.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      }
+    }
+  }, [isAskMode, loading]);
+
   return (
     <Layout>
       <div className="max-w-3xl mx-auto">
@@ -104,6 +118,7 @@ const Profile = () => {
         
         <div className="space-y-8">
           <QuestionForm 
+            id="question-form"
             username={user.username} 
             onSubmit={handleSubmitQuestion} 
           />
@@ -130,7 +145,7 @@ const Profile = () => {
                       key={question.id}
                       question={question}
                       showShareOptions={true}
-                      shareUrl={`${window.location.href}/question/${question.id}`}
+                      shareUrl={`${window.location.origin}/profile/${username}/question/${question.id}`}
                     />
                   ))}
                 </div>
